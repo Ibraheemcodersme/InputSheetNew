@@ -25,12 +25,12 @@ dependencies:
   cupertino_icons: ^0.1.2
   flutter_feather_icons: ^1.0.3
   flutter_money_formatter: ^0.8.3
-  intl: ^0.18.0
+  intl: ^0.17.0
   input_sheet:
     path: ../
 
 dependency_overrides:
-  intl: ^0.18.0
+  intl: ^0.17.0
 
 dev_dependencies:
   flutter_test:
