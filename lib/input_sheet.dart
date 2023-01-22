@@ -234,8 +234,8 @@ class InputSheet {
     required Map<String, String> options,
     required Function(List<String>) onDone,
     required TextStyle optionTextStyle,
-    required Icon optionSelectedIcon,
-    required Icon optionUnselectedIcon,
+     Icon? optionSelectedIcon,
+     Icon? optionUnselectedIcon,
   }) {
     Sheet(
       this._context,
@@ -248,8 +248,8 @@ class InputSheet {
         value: value,
         options: options,
         optionTextStyle: optionTextStyle,
-        optionSelectedIcon: optionSelectedIcon,
-        optionUnselectedIcon: optionUnselectedIcon,
+        optionSelectedIcon: optionSelectedIcon!,
+        optionUnselectedIcon: optionUnselectedIcon!,
       ),
     );
   }
