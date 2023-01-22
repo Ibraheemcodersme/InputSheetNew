@@ -233,7 +233,7 @@ class InputSheet {
     List<String> value=const[],
     required Map<String, String> options,
     required Function(List<String>) onDone,
-    required TextStyle optionTextStyle,
+     TextStyle optionTextStyle=const TextStyle(),
      Icon? optionSelectedIcon,
      Icon? optionUnselectedIcon,
   }) {
