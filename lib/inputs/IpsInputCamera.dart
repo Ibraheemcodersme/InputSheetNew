@@ -89,7 +89,7 @@ class _IpsInputCameraState extends State<IpsInputCamera> {
           quality: 50,
           position: -1,
         );
-        this.widget._onDone(_selectedFile, thumbnailFile);
+        this.widget._onDone(_selectedFile, thumbnailFile!);
       } else {
         this.widget._onDone(_selectedFile, _selectedFile.readAsBytesSync());
       }
@@ -228,7 +228,7 @@ class _IpsInputCameraState extends State<IpsInputCamera> {
           compressing = true;
           compressProgress = 0;
         });
-        MediaInfo mediaInfo = await VideoCompress.compressVideo(
+        MediaInfo? mediaInfo = await VideoCompress.compressVideo(
           videoFilename,
           quality: VideoQuality.LowQuality,
           deleteOrigin: true,
@@ -239,7 +239,7 @@ class _IpsInputCameraState extends State<IpsInputCamera> {
           compressing = false;
           compressProgress = 0;
         });
-        resolveFile = mediaInfo.file;
+        resolveFile = mediaInfo!.file!;
       } else {
         resolveFile = new File(videoFilename);
       }
@@ -577,7 +577,7 @@ class _IpsInputCameraState extends State<IpsInputCamera> {
                                       child: Container(
                                         color: Colors.black,
                                         child: videoController
-                                                    .value?.initialized ??
+                                                    .value.isInitialized ??
                                                 false == true
                                             ? AspectRatio(
                                                 aspectRatio: videoController
